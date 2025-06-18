@@ -1,7 +1,46 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+import { ref, onMounted } from 'vue'
+interface Nu {
+
+  id: string
+  name: string
+  birthplace: string
+  birthdate: string
+  gender: string
+  place: string
+  phone: string
+}
+
+const nus = ref<Nu[]>([])
+
+const fetchNus = async () => {
+  const response = await fetch('/api/nus')
+  const data = await response.json()
+  nus.value = data
+}
+
+onMounted(() => {
+  fetchNus()
+})
+
+</script>
 
 <template>
   <main>
-    Home
+    <div>Data Anggota</div>
+
+    <div>
+      <ul>
+        <li v-for="nu in nus" :key="nu.id">
+          <div>{{ nu.name }}</div>
+          <div>{{ nu.birthplace }}</div>
+          <div>{{ nu.birthdate }}</div>
+          <div>{{ nu.gender }}</div>
+          <div>{{ nu.place }}</div>
+          <div>{{ nu.phone }}</div>
+        </li>
+      </ul>
+    </div>
   </main>
 </template>
