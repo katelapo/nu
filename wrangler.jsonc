@@ -2,7 +2,15 @@
   "name": "nu",
   "compatibility_date": "2025-05-05",
   "assets": { 
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS"
   },
-  "main": "./api/index.ts"
+   "main": "./api/index.ts",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "NU",
+      "database_id": "34f36c85-4aa7-4c77-b649-1ef5f7852b4c"
+    }
+  ]
 }
