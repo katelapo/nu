@@ -10,6 +10,16 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/nu',
+      name: 'create-nu',
+      component: () => import('../views/CreateNuView.vue'),
+    },
+    {
+      path: '/nu/:id',
+      name: 'edit-nu',
+      component: () => import('../views/EditNuView.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
