@@ -8,8 +8,16 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname.startsWith("/api/nus")) {
-      let { results } = await env.DB.prepare("SELECT * FROM nus").all();
-      return Response.json(results);
+       if (request.method == 'GET') {
+        let { results } = await env.DB.prepare("SELECT * FROM nus").all();
+        return Response.json(results);
+      } else if (request.method == 'POST') {
+        const newId = crypto.randomUUID()
+        const input = await request.json<any>()
+        const query = `INSERT INTO nus(id,name,birthplace,birthdate,gender,place,phone,time) values ("${newId}","${input.name}","${input.birthplace}","${input.birthdate}","${input.gender}","${input.place}","${input.phone}","${input.time}")`;
+        const newNu = await env.DB.exec(query);
+        return Response.json(newNu);
+      }
     }
 
     return env.ASSETS.fetch(request);

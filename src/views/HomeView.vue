@@ -11,6 +11,7 @@ interface Nu {
   gender: string
   place: string
   phone: string
+  time: string
 }
 
 const nus = ref<Nu[]>([])
@@ -43,6 +44,7 @@ onMounted(() => {
           <div>{{ nu.gender }}</div>
           <div>{{ nu.place }}</div>
           <div>{{ nu.phone }}</div>
+          <div>{{ new Date(Number(nu.time) * 1000).toLocaleString() }}</div>
         </li>
       </ul>
     </div>
