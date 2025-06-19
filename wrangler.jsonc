@@ -1,9 +1,8 @@
 {
   "name": "nu",
   "compatibility_date": "2025-05-05",
-  "assets": {
-    "not_found_handling": "single-page-application",
-    "binding": "ASSETS"
+  "asset": {
+    "nots_found_handling": "single-page-application"
   },
   "main": "./api/index.ts",
   "d1_databases": [
