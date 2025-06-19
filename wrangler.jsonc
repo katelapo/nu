@@ -1,7 +1,7 @@
 {
   "name": "nu",
   "compatibility_date": "2025-05-05",
-  "assets": { 
+  "assets": {
     "not_found_handling": "single-page-application",
     "binding": "ASSETS"
   },
@@ -9,7 +9,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "NU",
+      "database_name": "nu",
       "database_id": "34f36c85-4aa7-4c77-b649-1ef5f7852b4c"
     }
   ]
